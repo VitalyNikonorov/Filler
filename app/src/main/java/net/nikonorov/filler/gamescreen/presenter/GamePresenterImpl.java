@@ -1,5 +1,6 @@
 package net.nikonorov.filler.gamescreen.presenter;
 
+import net.nikonorov.filler.gamescreen.ColorItem;
 import net.nikonorov.filler.gamescreen.GameMode;
 import net.nikonorov.filler.gamescreen.model.GameModel;
 import net.nikonorov.filler.gamescreen.model.GameModelImpl;
@@ -19,5 +20,15 @@ public class GamePresenterImpl implements GamePresenter {
 
         view.showGameField(model.getGameField());
 
+    }
+
+    @Override
+    public void makeMove(int player, ColorItem colorItem) {
+        model.makeMove(player, colorItem);
+    }
+
+    @Override
+    public void fieldChanged(ColorItem[][] gameField) {
+        view.showGameField(gameField);
     }
 }

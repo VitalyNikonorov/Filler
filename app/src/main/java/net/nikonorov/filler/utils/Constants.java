@@ -17,4 +17,11 @@ public class Constants {
 
     public static final int[] GAME_COLORS = {R.color.game_red, R.color.game_yellow, R.color.game_green, R.color.game_blue, R.color.game_pink};
 
+    public static final int PLAYER_ONE = 0;
+    public static final int PLAYER_TWO = 1;
+
+    public static final int MY_CELL = 2;
+    public static final int WILL_MY_CELL = 3;
+
+
 }

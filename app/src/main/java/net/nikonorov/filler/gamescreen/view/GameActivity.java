@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 import net.nikonorov.filler.R;
@@ -51,7 +52,6 @@ public class GameActivity extends Activity implements GameView {
 
                 GameCell cell = new GameCell(GameActivity.this);
                 cell.setLayoutParams(lp);
-                //cell.setPadding(padding, padding, padding, padding);
                 gameCells[j][i] = cell;
                 row.addView(cell);
             }
@@ -59,9 +59,47 @@ public class GameActivity extends Activity implements GameView {
             gameFieldView.addView(row);
 
         }
-
         presenter = new GamePresenterImpl(this, mode);
 
+        Button redBtn = (Button) findViewById(R.id.game_red_btn);
+        redBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.makeMove(Constants.PLAYER_ONE, ColorItem.RED);
+            }
+        });
+
+        Button yellowBtn = (Button) findViewById(R.id.game_yellow_btn);
+        yellowBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.makeMove(Constants.PLAYER_ONE, ColorItem.YELLOW);
+            }
+        });
+
+        Button greenBtn = (Button) findViewById(R.id.game_green_btn);
+        greenBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.makeMove(Constants.PLAYER_ONE, ColorItem.GREEN);
+            }
+        });
+
+        Button blueBtn = (Button) findViewById(R.id.game_blue_btn);
+        blueBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.makeMove(Constants.PLAYER_ONE, ColorItem.BLUE);
+            }
+        });
+
+        Button pinkBtn = (Button) findViewById(R.id.game_pink_btn);
+        pinkBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.makeMove(Constants.PLAYER_ONE, ColorItem.PINK);
+            }
+        });
     }
 
     @Override
