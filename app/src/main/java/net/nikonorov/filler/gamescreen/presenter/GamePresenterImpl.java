@@ -16,5 +16,8 @@ public class GamePresenterImpl implements GamePresenter {
     public GamePresenterImpl(GameView view, GameMode mode) {
         this.view = view;
         this.model = new GameModelImpl(this, mode);
+
+        view.showGameField(model.getGameField());
+
     }
 }

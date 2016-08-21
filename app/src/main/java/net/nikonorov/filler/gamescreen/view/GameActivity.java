@@ -2,12 +2,18 @@ package net.nikonorov.filler.gamescreen.view;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import net.nikonorov.filler.R;
+import net.nikonorov.filler.gamescreen.ColorItem;
 import net.nikonorov.filler.gamescreen.GameMode;
 import net.nikonorov.filler.gamescreen.presenter.GamePresenter;
 import net.nikonorov.filler.gamescreen.presenter.GamePresenterImpl;
 import net.nikonorov.filler.utils.Constants;
+import net.nikonorov.filler.utils.PixelConverter;
 
 /**
  * Created by vitaly on 20.08.16.
@@ -15,12 +21,58 @@ import net.nikonorov.filler.utils.Constants;
 public class GameActivity extends Activity implements GameView {
 
     private GamePresenter presenter;
+    private LinearLayout gameFieldView;
+    private GameCell[][] gameCells;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        GameMode mode = (GameMode) getIntent().getSerializableExtra(Constants.modeField);
+        GameMode mode = (GameMode) getIntent().getSerializableExtra(Constants.MODE_FIELD);
+
+        gameCells = new GameCell[Constants.FIELD_HEIGHT][Constants.FIELD_WIDTH];
+
+        gameFieldView = (LinearLayout) findViewById(R.id.game_field_view);
+
+        int padding = PixelConverter.DPToPX(1, this);
+
+        for(int j = 0; j < Constants.FIELD_HEIGHT; j++){
+
+            LinearLayout row = new LinearLayout(this);
+            LinearLayout.LayoutParams rowParameters = new LinearLayout.LayoutParams(0, 100);
+            rowParameters.width = LinearLayout.LayoutParams.MATCH_PARENT;
+            rowParameters.height = LinearLayout.LayoutParams.WRAP_CONTENT;
+            row.setLayoutParams(rowParameters);
+
+            for(int i = 0; i < Constants.FIELD_WIDTH; i++){
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(0, 100);
+                lp.weight = 1;
+                lp.setMargins(padding, padding, padding, padding);
+
+                GameCell cell = new GameCell(GameActivity.this);
+                cell.setLayoutParams(lp);
+                //cell.setPadding(padding, padding, padding, padding);
+                gameCells[j][i] = cell;
+                row.addView(cell);
+            }
+
+            gameFieldView.addView(row);
+
+        }
+
         presenter = new GamePresenterImpl(this, mode);
+
+    }
+
+    @Override
+    public void showGameField(ColorItem[][] field) {
+
+        for(int j = 0; j < Constants.FIELD_HEIGHT; j++){
+            for(int i = 0; i < Constants.FIELD_WIDTH; i++){
+                gameCells[j][i].setBackgroundColor(ContextCompat.getColor(this, Constants.GAME_COLORS[field[j][i].getIndex()]));
+            }
+        }
+
+
     }
 }

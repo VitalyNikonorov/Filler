@@ -3,7 +3,6 @@ package net.nikonorov.filler.mainscreen.view;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 
@@ -12,7 +11,6 @@ import net.nikonorov.filler.authorscreen.view.AuthorActivity;
 import net.nikonorov.filler.gamescreen.GameMode;
 import net.nikonorov.filler.gamescreen.view.GameActivity;
 import net.nikonorov.filler.mainscreen.MenuItems;
-import net.nikonorov.filler.mainscreen.model.MainModelImpl;
 import net.nikonorov.filler.mainscreen.presenter.MainPresenter;
 import net.nikonorov.filler.mainscreen.presenter.MainPresenterImpl;
 import net.nikonorov.filler.utils.Constants;
@@ -65,7 +63,7 @@ public class MainActivity extends Activity implements MainView {
     @Override
     public void startGame(GameMode mode) {
         Intent intent = new Intent(this, GameActivity.class);
-        intent.putExtra(Constants.modeField, mode);
+        intent.putExtra(Constants.MODE_FIELD, mode);
         startActivity(intent);
     }
 }
