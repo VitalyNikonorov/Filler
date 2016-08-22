@@ -9,5 +9,6 @@ public interface GamePresenter {
 
     void makeMove(int player, ColorItem colorItem);
     void fieldChanged(ColorItem[][] gameField);
+    void scoreChanged(int score);
 
 }

@@ -3,10 +3,12 @@ package net.nikonorov.filler.gamescreen.view;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import net.nikonorov.filler.R;
 import net.nikonorov.filler.gamescreen.ColorItem;
@@ -24,6 +26,7 @@ public class GameActivity extends Activity implements GameView {
     private GamePresenter presenter;
     private LinearLayout gameFieldView;
     private GameCell[][] gameCells;
+    private TextView scoreTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,6 +103,8 @@ public class GameActivity extends Activity implements GameView {
                 presenter.makeMove(Constants.PLAYER_ONE, ColorItem.PINK);
             }
         });
+
+        scoreTV = (TextView) findViewById(R.id.score_tv);
     }
 
     @Override
@@ -110,7 +115,10 @@ public class GameActivity extends Activity implements GameView {
                 gameCells[j][i].setBackgroundColor(ContextCompat.getColor(this, Constants.GAME_COLORS[field[j][i].getIndex()]));
             }
         }
+    }
 
-
+    @Override
+    public void updateScore(int score) {
+        scoreTV.setText(String.format("score: %d", score));
     }
 }

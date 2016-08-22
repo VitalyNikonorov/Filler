@@ -31,4 +31,9 @@ public class GamePresenterImpl implements GamePresenter {
     public void fieldChanged(ColorItem[][] gameField) {
         view.showGameField(gameField);
     }
+
+    @Override
+    public void scoreChanged(int score) {
+        view.updateScore(score);
+    }
 }

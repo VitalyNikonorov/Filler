@@ -48,6 +48,7 @@ public class GameModelImpl implements GameModel {
         }
 
         presenter.fieldChanged(gameField);
+        presenter.scoreChanged(players[0].getScore());
 
     }
 
