@@ -8,6 +8,6 @@ import net.nikonorov.filler.gamescreen.ColorItem;
 public interface GameView {
 
     void showGameField(ColorItem[][] field);
-    void updateScore(int score);
+    void updateScore(int score1, int score2);
 
 }

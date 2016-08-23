@@ -14,6 +14,8 @@ public class GamePresenterImpl implements GamePresenter {
     private GameView view;
     private GameModel model;
 
+    private int activePlayer = 0; //TODO need to rewrite!!!!
+
     public GamePresenterImpl(GameView view, GameMode mode) {
         this.view = view;
         this.model = new GameModelImpl(this, mode);
@@ -24,7 +26,13 @@ public class GamePresenterImpl implements GamePresenter {
 
     @Override
     public void makeMove(int player, ColorItem colorItem) {
-        model.makeMove(player, colorItem);
+//        model.makeMove(player, colorItem);
+        model.makeMove(activePlayer, colorItem);
+        if (activePlayer == 0 ){
+            activePlayer = 1;
+        } else {
+            activePlayer = 0;
+        }
     }
 
     @Override
@@ -33,7 +41,7 @@ public class GamePresenterImpl implements GamePresenter {
     }
 
     @Override
-    public void scoreChanged(int score) {
-        view.updateScore(score);
+    public void scoreChanged(int score1, int score2) {
+        view.updateScore(score1, score2);
     }
 }

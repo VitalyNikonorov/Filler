@@ -38,30 +38,8 @@ public class GameActivity extends Activity implements GameView {
 
         gameFieldView = (LinearLayout) findViewById(R.id.game_field_view);
 
-        int padding = PixelConverter.DPToPX(1, this);
+        generateGameFieldView();
 
-        for(int j = 0; j < Constants.FIELD_HEIGHT; j++){
-
-            LinearLayout row = new LinearLayout(this);
-            LinearLayout.LayoutParams rowParameters = new LinearLayout.LayoutParams(0, 100);
-            rowParameters.width = LinearLayout.LayoutParams.MATCH_PARENT;
-            rowParameters.height = LinearLayout.LayoutParams.WRAP_CONTENT;
-            row.setLayoutParams(rowParameters);
-
-            for(int i = 0; i < Constants.FIELD_WIDTH; i++){
-                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(0, 100);
-                lp.weight = 1;
-                lp.setMargins(padding, padding, padding, padding);
-
-                GameCell cell = new GameCell(GameActivity.this);
-                cell.setLayoutParams(lp);
-                gameCells[j][i] = cell;
-                row.addView(cell);
-            }
-
-            gameFieldView.addView(row);
-
-        }
         presenter = new GamePresenterImpl(this, mode);
 
         Button redBtn = (Button) findViewById(R.id.game_red_btn);
@@ -107,6 +85,33 @@ public class GameActivity extends Activity implements GameView {
         scoreTV = (TextView) findViewById(R.id.score_tv);
     }
 
+    private void generateGameFieldView() {
+        int padding = PixelConverter.DPToPX(1, this);
+
+        for(int j = 0; j < Constants.FIELD_HEIGHT; j++){
+
+            LinearLayout row = new LinearLayout(this);
+            LinearLayout.LayoutParams rowParameters = new LinearLayout.LayoutParams(0, 100);
+            rowParameters.width = LinearLayout.LayoutParams.MATCH_PARENT;
+            rowParameters.height = LinearLayout.LayoutParams.WRAP_CONTENT;
+            row.setLayoutParams(rowParameters);
+
+            for(int i = 0; i < Constants.FIELD_WIDTH; i++){
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(0, 100);
+                lp.weight = 1;
+                lp.setMargins(padding, padding, padding, padding);
+
+                GameCell cell = new GameCell(GameActivity.this);
+                cell.setLayoutParams(lp);
+                gameCells[j][i] = cell;
+                row.addView(cell);
+            }
+
+            gameFieldView.addView(row);
+
+        }
+    }
+
     @Override
     public void showGameField(ColorItem[][] field) {
 
@@ -118,7 +123,7 @@ public class GameActivity extends Activity implements GameView {
     }
 
     @Override
-    public void updateScore(int score) {
-        scoreTV.setText(String.format("score: %d", score));
+    public void updateScore(int score1, int score2) {
+        scoreTV.setText(String.format("Player1: %d, Player2: %d", score1, score2));
     }
 }
