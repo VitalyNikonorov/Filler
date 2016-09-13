@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import net.nikonorov.filler.R;
 import net.nikonorov.filler.authorscreen.view.AuthorActivity;
@@ -28,8 +29,7 @@ public class MainActivity extends Activity implements MainView {
         setContentView(R.layout.activity_main);
         presenter = new MainPresenterImpl(this);
 
-
-        Button singlePlayerBtn = (Button) findViewById(R.id.single_player_btn);
+        View singlePlayerBtn = findViewById(R.id.single_player_btn);
         singlePlayerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,7 +37,7 @@ public class MainActivity extends Activity implements MainView {
             }
         });
 
-        Button twoPlayersBtn = (Button) findViewById(R.id.two_players_btn);
+        View twoPlayersBtn = findViewById(R.id.two_players_btn);
         twoPlayersBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,7 +45,7 @@ public class MainActivity extends Activity implements MainView {
             }
         });
 
-        Button authorBtn = (Button) findViewById(R.id.about_author_btn);
+        View authorBtn = findViewById(R.id.about_author_btn);
         authorBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

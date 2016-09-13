@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Filler</string>
-    <string name="author_info">Vitaly Nikonorov</string>
+    <string name="author_info">Виталий Никоноров</string>
+    <string name="author_email">email@nikonorov.net</string>
+    <string name="single_mode_title">Одиночная игра</string>
+    <string name="single_mode">Один игрок</string>
+    <string name="two_players_mode">Два игрока</string>
+    <string name="about_author_label">Об авторе</string>
 </resources>

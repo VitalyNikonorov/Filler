@@ -33,6 +33,10 @@ public class GameActivity extends Activity implements GameView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         GameMode mode = (GameMode) getIntent().getSerializableExtra(Constants.MODE_FIELD);
+        switch (mode){
+            case SINGLE_MODE:
+                setTitle(getResources().getString(R.string.single_mode_title));
+        }
 
         gameCells = new GameCell[Constants.FIELD_HEIGHT][Constants.FIELD_WIDTH];
 
