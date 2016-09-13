@@ -1,14 +1,10 @@
 package net.nikonorov.filler.gamescreen.model;
 
-import android.util.Log;
-
 import net.nikonorov.filler.gamescreen.ColorItem;
 import net.nikonorov.filler.utils.Constants;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Locale;
-import java.util.Stack;
 
 /**
  * Created by vitaly on 22.08.16.

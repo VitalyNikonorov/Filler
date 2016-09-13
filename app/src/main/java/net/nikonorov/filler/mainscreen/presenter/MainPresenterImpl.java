@@ -30,6 +30,7 @@ public class MainPresenterImpl implements MainPresenter {
                 break;
 
             case TWO_PLAYERS :
+                view.startGame(GameMode.TWO_PLAYERS);
                 break;
 
             case ABOUT_AUTHOR :

@@ -3,8 +3,6 @@ package net.nikonorov.filler.gamescreen.view;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.widget.TextViewCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -33,10 +31,6 @@ public class GameActivity extends Activity implements GameView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         GameMode mode = (GameMode) getIntent().getSerializableExtra(Constants.MODE_FIELD);
-        switch (mode){
-            case SINGLE_MODE:
-                setTitle(getResources().getString(R.string.single_mode_title));
-        }
 
         gameCells = new GameCell[Constants.FIELD_HEIGHT][Constants.FIELD_WIDTH];
 

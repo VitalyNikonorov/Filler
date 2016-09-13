@@ -1,5 +1,7 @@
 package net.nikonorov.filler.gamescreen.model;
 
+import android.util.Log;
+
 import net.nikonorov.filler.gamescreen.ColorItem;
 import net.nikonorov.filler.gamescreen.GameMode;
 import net.nikonorov.filler.gamescreen.presenter.GamePresenter;
@@ -30,7 +32,6 @@ public class GameModelImpl implements GameModel {
 
         players[0] = player1;
         players[1] = player2;
-
     }
 
     @Override
@@ -42,6 +43,7 @@ public class GameModelImpl implements GameModel {
     public void makeMove(int player, ColorItem colorItem) {
 
         players[player].makeMove(colorItem, gameField);
+        Log.i("GAME", "MOVE");
 
         for (Player.CellCoordinate coordinate : players[player].getCells()){
             gameField[coordinate.getCoordinates()[0]][coordinate.getCoordinates()[1]] = colorItem;
@@ -49,6 +51,10 @@ public class GameModelImpl implements GameModel {
 
         presenter.fieldChanged(gameField);
         presenter.scoreChanged(players[0].getScore(), players[1].getScore());
+
+        if ( (gameMode == GameMode.SINGLE_MODE) && (player == 0) ) {
+            presenter.makeMove(1, ColorItem.getRandom());
+        }
 
     }
 
