@@ -7,7 +7,7 @@ import net.nikonorov.filler.gamescreen.ColorItem;
  */
 public interface GamePresenter {
 
-    void makeMove(int player, ColorItem colorItem);
+    void makeMove(ColorItem colorItem);
     void fieldChanged(ColorItem[][] gameField);
     void scoreChanged(int score1, int score2);
 

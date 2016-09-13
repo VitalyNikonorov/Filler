@@ -34,6 +34,10 @@ public class Player {
 
     }
 
+    public ColorItem getColor() {
+        return color;
+    }
+
     public int getScore() {
         return score;
     }

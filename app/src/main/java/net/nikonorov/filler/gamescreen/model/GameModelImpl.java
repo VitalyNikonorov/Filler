@@ -32,6 +32,9 @@ public class GameModelImpl implements GameModel {
 
         players[0] = player1;
         players[1] = player2;
+
+        lockedColors[0] = player1.getColor();
+        lockedColors[1] = player2.getColor();
     }
 
     @Override
@@ -43,7 +46,6 @@ public class GameModelImpl implements GameModel {
     public void makeMove(int player, ColorItem colorItem) {
 
         players[player].makeMove(colorItem, gameField);
-        Log.i("GAME", "MOVE");
 
         for (Player.CellCoordinate coordinate : players[player].getCells()){
             gameField[coordinate.getCoordinates()[0]][coordinate.getCoordinates()[1]] = colorItem;
@@ -52,10 +54,14 @@ public class GameModelImpl implements GameModel {
         presenter.fieldChanged(gameField);
         presenter.scoreChanged(players[0].getScore(), players[1].getScore());
 
-        if ( (gameMode == GameMode.SINGLE_MODE) && (player == 0) ) {
-            presenter.makeMove(1, ColorItem.getRandom());
-        }
+        lockedColors[player] = players[player].getColor();
+    }
 
+    @Override
+    public void onMoved(int newPlayer) {
+        if ( (gameMode == GameMode.SINGLE_MODE) && (newPlayer == 1) ) {
+            presenter.makeMove(ColorItem.getRandom(lockedColors));
+        }
     }
 
     private ColorItem[][] generateField(int x, int y) {
@@ -63,7 +69,7 @@ public class GameModelImpl implements GameModel {
 
         for(int j = 0; j < x; j++){
             for(int i = 0; i < y; i++){
-                field[j][i] = ColorItem.getRandom();
+                field[j][i] = ColorItem.getRandom(null);
             }
         }
         return field;

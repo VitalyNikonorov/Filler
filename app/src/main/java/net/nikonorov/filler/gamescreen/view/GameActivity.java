@@ -44,7 +44,7 @@ public class GameActivity extends Activity implements GameView {
         redBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presenter.makeMove(Constants.PLAYER_ONE, ColorItem.RED);
+                presenter.makeMove(ColorItem.RED);
             }
         });
 
@@ -52,7 +52,7 @@ public class GameActivity extends Activity implements GameView {
         yellowBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presenter.makeMove(Constants.PLAYER_ONE, ColorItem.YELLOW);
+                presenter.makeMove(ColorItem.YELLOW);
             }
         });
 
@@ -60,7 +60,7 @@ public class GameActivity extends Activity implements GameView {
         greenBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presenter.makeMove(Constants.PLAYER_ONE, ColorItem.GREEN);
+                presenter.makeMove(ColorItem.GREEN);
             }
         });
 
@@ -68,7 +68,7 @@ public class GameActivity extends Activity implements GameView {
         blueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presenter.makeMove(Constants.PLAYER_ONE, ColorItem.BLUE);
+                presenter.makeMove(ColorItem.BLUE);
             }
         });
 
@@ -76,7 +76,7 @@ public class GameActivity extends Activity implements GameView {
         pinkBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presenter.makeMove(Constants.PLAYER_ONE, ColorItem.PINK);
+                presenter.makeMove(ColorItem.PINK);
             }
         });
 
