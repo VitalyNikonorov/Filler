@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorPrimary"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <RelativeLayout
@@ -20,7 +20,7 @@
             android:id="@+id/author_name"
             android:layout_toRightOf="@+id/engineer_icon"
             android:layout_centerHorizontal="true"
-            android:textColor="@color/main_menu_text"
+            android:textColor="@color/game_purple"
             android:layout_marginTop="4dp"
             android:textSize="20sp"
             android:layout_width="wrap_content"
@@ -41,7 +41,7 @@
             android:layout_toRightOf="@+id/engineer_icon"
             android:layout_below="@+id/engineer_icon"
             android:layout_centerHorizontal="true"
-            android:textColor="@color/main_menu_text"
+            android:textColor="@color/game_purple"
             android:layout_marginTop="4dp"
             android:textSize="20sp"
             android:layout_width="wrap_content"

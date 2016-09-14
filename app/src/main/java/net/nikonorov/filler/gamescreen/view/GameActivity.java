@@ -83,6 +83,18 @@ public class GameActivity extends Activity implements GameView {
         scoreTV = (TextView) findViewById(R.id.score_tv);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        overridePendingTransition(R.animator.open_translate, R.animator.close_scale);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        overridePendingTransition(R.animator.open_scale, R.animator.close_translate);
+    }
+
     private void generateGameFieldView() {
         int padding = PixelConverter.DPToPX(1, this);
 

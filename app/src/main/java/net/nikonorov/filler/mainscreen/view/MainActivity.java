@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 
 import net.nikonorov.filler.R;
 import net.nikonorov.filler.authorscreen.view.AuthorActivity;
@@ -52,6 +50,18 @@ public class MainActivity extends Activity implements MainView {
                 presenter.onMenuItemClick(MenuItems.ABOUT_AUTHOR);
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+//        overridePendingTransition(R.animator.open_translate, R.animator.close_scale);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+//        overridePendingTransition(R.animator.open_scale, R.animator.close_translate);
     }
 
     @Override

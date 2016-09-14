@@ -21,4 +21,17 @@ public class AuthorActivity extends Activity implements AuthorView {
         presenter = new AuthorPresenterImpl(this);
 
     }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        overridePendingTransition(R.animator.open_translate, R.animator.close_scale);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        overridePendingTransition(R.animator.open_scale, R.animator.close_translate);
+    }
+
+
 }

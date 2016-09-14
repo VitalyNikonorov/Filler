@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorPrimary"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/single_player_btn"
+        android:id="@+id/single_player"
         android:layout_width="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/two_players_btn"
+        android:layout_above="@+id/two_players"
         android:layout_centerHorizontal="true">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageButton
+            android:id="@+id/single_player_btn"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:elevation="6dp"
+            android:background="@drawable/main_btn_background_red"
             android:src="@drawable/ic_person_white_48dp"/>
 
         <TextView
@@ -22,47 +25,52 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textSize="16sp"
-            android:textColor="@color/main_menu_text"
+            android:textColor="@color/game_pink"
             android:text="@string/single_mode" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/two_players_btn"
+        android:id="@+id/two_players"
         android:layout_centerInParent="true"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="36dp"
         android:orientation="vertical"
         android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageButton
+            android:id="@+id/two_players_btn"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:elevation="6dp"
+            android:background="@drawable/main_btn_background_blue"
             android:src="@drawable/ic_people_white_48dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            android:layout_marginBottom="16dp"
-            android:textColor="@color/main_menu_text"
+            android:textColor="@color/game_blue"
             android:text="@string/two_players_mode"/>
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/about_author_btn"
-        android:layout_marginTop="48dp"
-        android:layout_below="@+id/two_players_btn"
+        android:id="@+id/about_author"
+        android:layout_marginTop="36dp"
+        android:layout_below="@+id/two_players"
         android:layout_centerHorizontal="true"
         android:orientation="vertical"
         android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageButton
+            android:id="@+id/about_author_btn"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:elevation="6dp"
+            android:background="@drawable/main_btn_background_green"
             android:src="@drawable/ic_contact_mail_white_48dp"
             />
 
@@ -70,7 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            android:textColor="@color/main_menu_text"
+            android:textColor="@color/game_green"
             android:text="@string/about_author_label"/>
 
     </LinearLayout>
