@@ -29,6 +29,8 @@ public class GameActivity extends Activity implements GameView {
     private TextView scorePlayerTwoTV;
     private ImageButton player2Img;
 
+    private ImageButton[] gameButtons = new ImageButton[5];
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,40 +53,40 @@ public class GameActivity extends Activity implements GameView {
 
         presenter = new GamePresenterImpl(this, mode);
 
-        Button redBtn = (Button) findViewById(R.id.game_red_btn);
-        redBtn.setOnClickListener(new View.OnClickListener() {
+        gameButtons[ColorItem.RED.getIndex()] = (ImageButton) findViewById(R.id.game_red_btn);
+        gameButtons[ColorItem.RED.getIndex()].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 presenter.makeMove(ColorItem.RED);
             }
         });
 
-        Button yellowBtn = (Button) findViewById(R.id.game_yellow_btn);
-        yellowBtn.setOnClickListener(new View.OnClickListener() {
+        gameButtons[ColorItem.YELLOW.getIndex()] = (ImageButton) findViewById(R.id.game_yellow_btn);
+        gameButtons[ColorItem.YELLOW.getIndex()].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 presenter.makeMove(ColorItem.YELLOW);
             }
         });
 
-        Button greenBtn = (Button) findViewById(R.id.game_green_btn);
-        greenBtn.setOnClickListener(new View.OnClickListener() {
+        gameButtons[ColorItem.GREEN.getIndex()] = (ImageButton) findViewById(R.id.game_green_btn);
+        gameButtons[ColorItem.GREEN.getIndex()].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 presenter.makeMove(ColorItem.GREEN);
             }
         });
 
-        Button blueBtn = (Button) findViewById(R.id.game_blue_btn);
-        blueBtn.setOnClickListener(new View.OnClickListener() {
+        gameButtons[ColorItem.BLUE.getIndex()] = (ImageButton) findViewById(R.id.game_blue_btn);
+        gameButtons[ColorItem.BLUE.getIndex()].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 presenter.makeMove(ColorItem.BLUE);
             }
         });
 
-        Button pinkBtn = (Button) findViewById(R.id.game_pink_btn);
-        pinkBtn.setOnClickListener(new View.OnClickListener() {
+        gameButtons[ColorItem.PINK.getIndex()] = (ImageButton) findViewById(R.id.game_pink_btn);
+        gameButtons[ColorItem.PINK.getIndex()].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 presenter.makeMove(ColorItem.PINK);
@@ -93,6 +95,8 @@ public class GameActivity extends Activity implements GameView {
 
         scorePlayerOneTV = (TextView) findViewById(R.id.score_player_1);
         scorePlayerTwoTV = (TextView) findViewById(R.id.score_player_2);
+
+        presenter.disableBtns();
     }
 
     @Override
@@ -130,7 +134,6 @@ public class GameActivity extends Activity implements GameView {
             }
 
             gameFieldView.addView(row);
-
         }
     }
 
@@ -148,5 +151,16 @@ public class GameActivity extends Activity implements GameView {
     public void updateScore(int score1, int score2) {
         scorePlayerOneTV.setText(String.valueOf(score1));
         scorePlayerTwoTV.setText(String.valueOf(score2));
+    }
+
+    @Override
+    public void disableBtns(ColorItem[] lockedColors) {
+        for (int i = 0; i < gameButtons.length; i++){
+            gameButtons[i].setImageDrawable(null);
+        }
+
+        for (int i = 0; i < lockedColors.length; i++){
+            gameButtons[lockedColors[i].getIndex()].setImageDrawable(ContextCompat.getDrawable(GameActivity.this, R.drawable.ic_block_white_48dp));
+        }
     }
 }

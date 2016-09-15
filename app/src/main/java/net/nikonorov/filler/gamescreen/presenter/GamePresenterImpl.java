@@ -21,7 +21,6 @@ public class GamePresenterImpl implements GamePresenter {
         this.model = new GameModelImpl(this, mode);
 
         view.showGameField(model.getGameField());
-
     }
 
     @Override
@@ -45,5 +44,10 @@ public class GamePresenterImpl implements GamePresenter {
     @Override
     public void scoreChanged(int score1, int score2) {
         view.updateScore(score1, score2);
+    }
+
+    @Override
+    public void disableBtns() {
+        view.disableBtns(model.getLockedColors());
     }
 }

@@ -42,6 +42,10 @@ public class GameModelImpl implements GameModel {
         return gameField;
     }
 
+    public ColorItem[] getLockedColors() {
+        return lockedColors;
+    }
+
     @Override
     public void makeMove(int player, ColorItem colorItem) {
 
@@ -55,6 +59,7 @@ public class GameModelImpl implements GameModel {
         presenter.scoreChanged(players[0].getScore(), players[1].getScore());
 
         lockedColors[player] = players[player].getColor();
+        presenter.disableBtns();
     }
 
     @Override

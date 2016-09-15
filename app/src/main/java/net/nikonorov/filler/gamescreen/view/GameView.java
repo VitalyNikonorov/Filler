@@ -9,5 +9,6 @@ public interface GameView {
 
     void showGameField(ColorItem[][] field);
     void updateScore(int score1, int score2);
+    void disableBtns(ColorItem[] lockedColors);
 
 }

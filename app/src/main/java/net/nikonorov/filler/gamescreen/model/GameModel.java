@@ -10,5 +10,5 @@ public interface GameModel {
     ColorItem[][] getGameField();
     void makeMove(int player, ColorItem colorItem);
     void onMoved(int player);
-
+    ColorItem[] getLockedColors();
 }

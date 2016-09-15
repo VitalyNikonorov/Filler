@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#f5f5f5</color> 49044E
-    <color name="colorPrimaryDark">#c7bad8</color> 9900A6
+    <color name="colorPrimaryDark">#CE93D8</color> 9900A6
     <color name="colorAccent">#FDFF09</color>
 
     <color name="game_red">#F44336</color>
     <color name="game_pink">#F48FB1</color>
     <color name="game_blue">#2196F3</color>
     <color name="game_green">#4CAF50</color>
-    <color name="game_yellow">#FFEB3B</color>
-    <color name="game_purple">#c7bad8</color>
+    <color name="game_yellow">#FBC02D</color>
+    <color name="game_purple">#CE93D8</color>
 
     <color name="main_menu_text">#FFFFFF</color>
 

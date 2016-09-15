@@ -3,17 +3,20 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <ImageButton
-        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
+
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:id="@+id/player_1_img"
         android:background="@drawable/main_btn_background_pink"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:src="@drawable/ic_person_white_36dp"/>
 
     <TextView
         android:id="@+id/score_player_1"
         android:text="0"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="15dp"
         android:textSize="24sp"
         android:textColor="@color/game_pink"
         android:layout_width="wrap_content"
@@ -23,7 +26,7 @@
     <TextView
         android:id="@+id/score_player_2"
         android:text="0"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="15dp"
         android:textSize="24sp"
         android:textColor="@color/game_blue"
         android:layout_width="wrap_content"
@@ -31,65 +34,71 @@
         android:layout_toLeftOf="@+id/player_2_img"/>
 
     <ImageButton
-        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:id="@+id/player_2_img"
         android:layout_alignParentRight="true"
         android:background="@drawable/main_btn_background_blue"
-        android:layout_width="60dp"
-        android:layout_height="60dp" />
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
 
     <LinearLayout
         android:id="@+id/game_field_view"
         android:layout_below="@+id/player_1_img"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
         android:orientation="vertical">
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/button_panel"
-        android:orientation="horizontal"
-        android:layout_below="@+id/game_field_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-
-        <Button
+        <ImageButton
             android:id="@+id/game_red_btn"
-            android:background="@color/game_red"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+            android:layout_margin="4dp"
+            android:layout_below="@+id/game_field_view"
+            android:background="@drawable/main_btn_background_red"
+            android:layout_toLeftOf="@+id/game_yellow_btn"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
 
-        <Button
+        <ImageButton
             android:id="@+id/game_yellow_btn"
-            android:background="@color/game_yellow"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+            android:background="@drawable/main_btn_background_yellow"
+            android:layout_margin="4dp"
+            android:layout_below="@+id/game_field_view"
+            android:layout_toLeftOf="@+id/game_green_btn"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
 
-        <Button
+        <ImageButton
             android:id="@+id/game_green_btn"
-            android:background="@color/game_green"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+            android:background="@drawable/main_btn_background_green"
+            android:layout_margin="4dp"
+            android:layout_below="@+id/game_field_view"
+            android:layout_centerHorizontal="true"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
 
-        <Button
+        <ImageButton
             android:id="@+id/game_blue_btn"
-            android:background="@color/game_blue"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+            android:background="@drawable/main_btn_background_blue"
+            android:layout_margin="4dp"
+            android:layout_below="@+id/game_field_view"
+            android:layout_toRightOf="@+id/game_green_btn"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
 
-        <Button
+        <ImageButton
             android:id="@+id/game_pink_btn"
-            android:background="@color/game_pink"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
+            android:background="@drawable/main_btn_background_pink"
+            android:layout_margin="4dp"
+            android:layout_below="@+id/game_field_view"
+            android:layout_toRightOf="@+id/game_blue_btn"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
 
 </RelativeLayout>
