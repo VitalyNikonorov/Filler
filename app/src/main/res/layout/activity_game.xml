@@ -2,8 +2,45 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
+    <ImageButton
+        android:layout_margin="8dp"
+        android:id="@+id/player_1_img"
+        android:background="@drawable/main_btn_background_pink"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_person_white_36dp"/>
+
+    <TextView
+        android:id="@+id/score_player_1"
+        android:text="0"
+        android:layout_marginTop="24dp"
+        android:textSize="24sp"
+        android:textColor="@color/game_pink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/player_1_img"/>
+
+    <TextView
+        android:id="@+id/score_player_2"
+        android:text="0"
+        android:layout_marginTop="24dp"
+        android:textSize="24sp"
+        android:textColor="@color/game_blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/player_2_img"/>
+
+    <ImageButton
+        android:layout_margin="8dp"
+        android:id="@+id/player_2_img"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/main_btn_background_blue"
+        android:layout_width="60dp"
+        android:layout_height="60dp" />
+
     <LinearLayout
         android:id="@+id/game_field_view"
+        android:layout_below="@+id/player_1_img"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -54,12 +91,5 @@
             android:layout_height="wrap_content" />
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/score_tv"
-        android:text="score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/button_panel"/>
 
 </RelativeLayout>

@@ -17,7 +17,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:elevation="6dp"
-            android:background="@drawable/main_btn_background_red"
+            android:background="@drawable/main_btn_background_pink"
             android:src="@drawable/ic_person_white_48dp"/>
 
         <TextView

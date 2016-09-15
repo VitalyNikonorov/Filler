@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -24,13 +25,23 @@ public class GameActivity extends Activity implements GameView {
     private GamePresenter presenter;
     private LinearLayout gameFieldView;
     private GameCell[][] gameCells;
-    private TextView scoreTV;
+    private TextView scorePlayerOneTV;
+    private TextView scorePlayerTwoTV;
+    private ImageButton player2Img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         GameMode mode = (GameMode) getIntent().getSerializableExtra(Constants.MODE_FIELD);
+        player2Img = (ImageButton) findViewById(R.id.player_2_img);
+        switch (mode){
+            case SINGLE_MODE:
+                player2Img.setImageDrawable(ContextCompat.getDrawable(GameActivity.this, R.drawable.ic_computer_white_36dp));
+                break;
+            case TWO_PLAYERS:
+                player2Img.setImageDrawable(ContextCompat.getDrawable(GameActivity.this, R.drawable.ic_person_white_36dp));
+        }
 
         gameCells = new GameCell[Constants.FIELD_HEIGHT][Constants.FIELD_WIDTH];
 
@@ -80,7 +91,8 @@ public class GameActivity extends Activity implements GameView {
             }
         });
 
-        scoreTV = (TextView) findViewById(R.id.score_tv);
+        scorePlayerOneTV = (TextView) findViewById(R.id.score_player_1);
+        scorePlayerTwoTV = (TextView) findViewById(R.id.score_player_2);
     }
 
     @Override
@@ -134,6 +146,7 @@ public class GameActivity extends Activity implements GameView {
 
     @Override
     public void updateScore(int score1, int score2) {
-        scoreTV.setText(String.format("Player1: %d, Player2: %d", score1, score2));
+        scorePlayerOneTV.setText(String.valueOf(score1));
+        scorePlayerTwoTV.setText(String.valueOf(score2));
     }
 }
