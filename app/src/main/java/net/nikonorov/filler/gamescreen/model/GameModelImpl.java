@@ -22,6 +22,10 @@ public class GameModelImpl implements GameModel {
         this.presenter = presenter;
         this.gameMode = gameMode;
 
+        createGame();
+    }
+
+    public void createGame() {
         gameField = generateField(Constants.FIELD_HEIGHT, Constants.FIELD_WIDTH);
         lockedColors = new ColorItem[]{gameField[Constants.FIELD_HEIGHT - 1][0], gameField[0][Constants.FIELD_WIDTH - 1]};
 

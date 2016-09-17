@@ -7,4 +7,10 @@
     <string name="two_players_mode">Два игрока</string>
     <string name="about_author_label">Об авторе</string>
     <string name="victory">ПОБЕДА!!!</string>
+    <string name="restart_game">РЕСТАРТ</string>
+    <string name="back_to_menu">ВЫЙТИ</string>
+    <string name="victory_text_1">Выиграл игрок в</string>
+    <string name="victory_text_2">углу</string>
+    <string name="victory_text_red">красном</string>
+    <string name="victory_text_blue">красном</string>
 </resources>

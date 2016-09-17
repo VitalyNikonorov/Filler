@@ -54,9 +54,7 @@ public class GameActivity extends Activity implements GameView {
         gameCells = new GameCell[Constants.FIELD_HEIGHT][Constants.FIELD_WIDTH];
 
         gameFieldView = (LinearLayout) findViewById(R.id.game_field_view);
-
         generateGameFieldView();
-
         presenter = new GamePresenterImpl(this, mode);
 
         gameButtons[ColorItem.RED.getIndex()] = (ImageButton) findViewById(R.id.game_red_btn);
@@ -108,7 +106,22 @@ public class GameActivity extends Activity implements GameView {
         dialog = new Dialog(GameActivity.this);
         dialog.setContentView(R.layout.popup_victory);
         victoryMsgTV = (TextView) dialog.findViewById(R.id.popup_msg);
-        dialog.setTitle("Победа");
+
+        dialog.findViewById(R.id.restart_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                presenter.onRestartClick();
+            }
+        });
+
+        dialog.findViewById(R.id.back_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+                dialog.dismiss();
+            }
+        });
     }
 
     @Override

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="250dp"
+    android:layout_width="300dp"
     android:layout_height="250dp">
-
 
     <ImageButton
         android:id="@+id/star_btn_green"
@@ -12,6 +11,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+        android:elevation="8dp"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:src="@drawable/ic_star_white_36dp"/>
@@ -25,6 +25,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+        android:elevation="8dp"
         android:layout_toLeftOf="@id/star_btn_green"
         android:src="@drawable/ic_star_white_36dp"/>
 
@@ -37,13 +38,14 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+        android:elevation="8dp"
         android:layout_toRightOf="@id/star_btn_green"
         android:src="@drawable/ic_star_white_36dp"/>
 
     <TextView
         android:layout_marginTop="100dp"
         android:text="@string/victory"
-        android:textColor="@color/game_yellow"
+        android:textColor="@android:color/black"
         android:textSize="30sp"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
@@ -53,11 +55,36 @@
         android:id="@+id/popup_msg"
         android:layout_marginTop="150dp"
         android:text="@string/victory"
-        android:textColor="@color/game_purple"
+        android:textColor="@android:color/black"
         android:textSize="20sp"
         android:textAlignment="center"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/restart_btn"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/restart_game"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:textColor="@color/game_blue"
+        android:layout_margin="8dp"
+        android:layout_width="90dp"
+        android:layout_height="40dp" />
+
+    <TextView
+        android:id="@+id/back_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@id/restart_btn"
+        android:text="@string/back_to_menu"
+        android:textColor="@color/game_blue"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_width="80dp"
+        android:layout_height="40dp" />
 
 </RelativeLayout>
