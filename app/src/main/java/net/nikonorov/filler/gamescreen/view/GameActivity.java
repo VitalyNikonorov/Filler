@@ -197,7 +197,7 @@ public class GameActivity extends Activity implements GameView {
         } else {
             for(int j = 0; j < Constants.FIELD_HEIGHT; j++){
                 for(int i = 0; i < Constants.FIELD_WIDTH; i++){
-                    gameCells[j][i].setImageResource(0);
+                    gameCells[j][i].setImageResource(android.R.color.transparent);
                 }
             }
         }

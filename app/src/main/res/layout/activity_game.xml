@@ -5,8 +5,8 @@
     <ImageButton
         android:layout_marginTop="8dp"
         android:elevation="6dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="8dp"
         android:id="@+id/player_1_img"
         android:background="@drawable/main_btn_background_red"
         android:layout_width="45dp"
@@ -59,8 +59,8 @@
 
     <ImageButton
         android:layout_marginTop="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="12dp"
         android:elevation="6dp"
         android:id="@+id/player_2_img"
         android:layout_alignParentRight="true"

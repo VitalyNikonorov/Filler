@@ -12,5 +12,5 @@
     <string name="victory_text_1">Выиграл игрок в</string>
     <string name="victory_text_2">углу</string>
     <string name="victory_text_red">красном</string>
-    <string name="victory_text_blue">красном</string>
+    <string name="victory_text_blue">синем</string>
 </resources>
