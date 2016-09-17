@@ -1,9 +1,13 @@
 package net.nikonorov.filler.gamescreen.view;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.text.Html;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.ScaleAnimation;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -28,6 +32,8 @@ public class GameActivity extends Activity implements GameView {
     private TextView scorePlayerOneTV;
     private TextView scorePlayerTwoTV;
     private ImageButton player2Img;
+    private Dialog dialog;
+    private TextView victoryMsgTV;
 
     private ImageButton[] gameButtons = new ImageButton[5];
 
@@ -39,10 +45,10 @@ public class GameActivity extends Activity implements GameView {
         player2Img = (ImageButton) findViewById(R.id.player_2_img);
         switch (mode){
             case SINGLE_MODE:
-                player2Img.setImageDrawable(ContextCompat.getDrawable(GameActivity.this, R.drawable.ic_computer_white_36dp));
+                player2Img.setImageDrawable(ContextCompat.getDrawable(GameActivity.this, R.drawable.ic_cpu_24dp));
                 break;
             case TWO_PLAYERS:
-                player2Img.setImageDrawable(ContextCompat.getDrawable(GameActivity.this, R.drawable.ic_person_white_36dp));
+                player2Img.setImageDrawable(ContextCompat.getDrawable(GameActivity.this, R.drawable.ic_person_white_24dp));
         }
 
         gameCells = new GameCell[Constants.FIELD_HEIGHT][Constants.FIELD_WIDTH];
@@ -97,6 +103,12 @@ public class GameActivity extends Activity implements GameView {
         scorePlayerTwoTV = (TextView) findViewById(R.id.score_player_2);
 
         presenter.disableBtns();
+
+
+        dialog = new Dialog(GameActivity.this);
+        dialog.setContentView(R.layout.popup_victory);
+        victoryMsgTV = (TextView) dialog.findViewById(R.id.popup_msg);
+        dialog.setTitle("Победа");
     }
 
     @Override
@@ -137,12 +149,23 @@ public class GameActivity extends Activity implements GameView {
         }
     }
 
+    public void scaleView(View v, float startScale, float endScale) {
+        Animation anim = new ScaleAnimation(
+                startScale, endScale, // Start and end values for the X axis scaling
+                startScale, endScale, // Start and end values for the Y axis scaling
+                Animation.RELATIVE_TO_SELF, 0f, // Pivot point of X scaling
+                Animation.RELATIVE_TO_SELF, 1f); // Pivot point of Y scaling
+        anim.setFillAfter(true); // Needed to keep the result of the animation
+        v.startAnimation(anim);
+    }
+
     @Override
     public void showGameField(ColorItem[][] field) {
 
         for(int j = 0; j < Constants.FIELD_HEIGHT; j++){
             for(int i = 0; i < Constants.FIELD_WIDTH; i++){
                 gameCells[j][i].setBackgroundColor(ContextCompat.getColor(this, Constants.GAME_COLORS[field[j][i].getIndex()]));
+                scaleView(gameCells[j][i], 1.5f, 1.0f);
             }
         }
     }
@@ -162,5 +185,11 @@ public class GameActivity extends Activity implements GameView {
         for (int i = 0; i < lockedColors.length; i++){
             gameButtons[lockedColors[i].getIndex()].setImageDrawable(ContextCompat.getDrawable(GameActivity.this, R.drawable.ic_block_white_48dp));
         }
+    }
+
+    @Override
+    public void showGameOverDialog(String msg) {
+        victoryMsgTV.setText(Html.fromHtml(msg));
+        dialog.show();
     }
 }

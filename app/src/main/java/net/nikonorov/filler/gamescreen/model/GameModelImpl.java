@@ -59,6 +59,7 @@ public class GameModelImpl implements GameModel {
         presenter.scoreChanged(players[0].getScore(), players[1].getScore());
 
         lockedColors[player] = players[player].getColor();
+
         presenter.disableBtns();
     }
 

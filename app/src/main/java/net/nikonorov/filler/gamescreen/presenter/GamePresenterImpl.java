@@ -1,10 +1,13 @@
 package net.nikonorov.filler.gamescreen.presenter;
 
+import android.text.Html;
+
 import net.nikonorov.filler.gamescreen.ColorItem;
 import net.nikonorov.filler.gamescreen.GameMode;
 import net.nikonorov.filler.gamescreen.model.GameModel;
 import net.nikonorov.filler.gamescreen.model.GameModelImpl;
 import net.nikonorov.filler.gamescreen.view.GameView;
+import net.nikonorov.filler.utils.Constants;
 
 /**
  * Created by vitaly on 20.08.16.
@@ -60,6 +63,15 @@ public class GamePresenterImpl implements GamePresenter {
     @Override
     public void scoreChanged(int score1, int score2) {
         view.updateScore(score1, score2);
+        if ( (score1 + score2) == (Constants.FIELD_HEIGHT * Constants.FIELD_WIDTH) ){
+            String msg;
+            if (score1 > score2) {
+                msg = "<font color=#F48FB1>Выиграл игрок в</font> <font color=#F44336> красном </font> <font color=#F48FB1>углу</font>";
+            } else {
+                msg = "<font color=#F48FB1>Выиграл игрок в</font> <font color=#2196F3> синем </font> <font color=#F48FB1>углу</font>";
+            }
+            view.showGameOverDialog(msg);
+        }
     }
 
     @Override

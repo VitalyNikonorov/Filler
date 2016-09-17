@@ -8,17 +8,17 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:id="@+id/player_1_img"
-        android:background="@drawable/main_btn_background_pink"
+        android:background="@drawable/main_btn_background_red"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:src="@drawable/ic_person_white_36dp"/>
+        android:src="@drawable/ic_person_white_24dp"/>
 
     <TextView
         android:id="@+id/score_player_1"
         android:text="0"
         android:layout_marginTop="15dp"
         android:textSize="24sp"
-        android:textColor="@color/game_pink"
+        android:textColor="@color/game_red"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/player_1_img"/>
