@@ -4,13 +4,14 @@ import android.content.Context;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.ImageButton;
 
 import net.nikonorov.filler.utils.PixelConverter;
 
 /**
  * Created by vitaly on 21.08.16.
  */
-public class GameCell extends View {
+public class GameCell extends ImageButton {
 
     public GameCell(Context context) {
         super(context);

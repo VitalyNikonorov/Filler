@@ -16,10 +16,13 @@ import android.widget.TextView;
 import net.nikonorov.filler.R;
 import net.nikonorov.filler.gamescreen.ColorItem;
 import net.nikonorov.filler.gamescreen.GameMode;
+import net.nikonorov.filler.gamescreen.model.CellCoordinate;
 import net.nikonorov.filler.gamescreen.presenter.GamePresenter;
 import net.nikonorov.filler.gamescreen.presenter.GamePresenterImpl;
 import net.nikonorov.filler.utils.Constants;
 import net.nikonorov.filler.utils.PixelConverter;
+
+import java.util.ArrayList;
 
 /**
  * Created by vitaly on 20.08.16.
@@ -177,7 +180,7 @@ public class GameActivity extends Activity implements GameView {
 //    }
 
     @Override
-    public void showGameField(ColorItem[][] field) {
+    public void showGameField(ColorItem[][] field, ArrayList<CellCoordinate> cells, int player){
 
         for(int j = 0; j < Constants.FIELD_HEIGHT; j++){
             for(int i = 0; i < Constants.FIELD_WIDTH; i++){
@@ -185,6 +188,20 @@ public class GameActivity extends Activity implements GameView {
 //                scaleView(gameCells[j][i], 1.5f, 1.0f);
             }
         }
+
+        if (cells != null) {
+            for (CellCoordinate cell : cells) {
+                int resourse = (player == 0) ? R.drawable.ic_circle_16dp : R.drawable.ic_cross_16dp;
+                gameCells[cell.getCoordinates()[0]][cell.getCoordinates()[1]].setImageDrawable(ContextCompat.getDrawable(GameActivity.this, resourse));
+            }
+        } else {
+            for(int j = 0; j < Constants.FIELD_HEIGHT; j++){
+                for(int i = 0; i < Constants.FIELD_WIDTH; i++){
+                    gameCells[j][i].setImageResource(0);
+                }
+            }
+        }
+
     }
 
     @Override

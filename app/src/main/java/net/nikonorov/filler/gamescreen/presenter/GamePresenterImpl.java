@@ -6,10 +6,13 @@ import android.text.Html;
 import net.nikonorov.filler.R;
 import net.nikonorov.filler.gamescreen.ColorItem;
 import net.nikonorov.filler.gamescreen.GameMode;
+import net.nikonorov.filler.gamescreen.model.CellCoordinate;
 import net.nikonorov.filler.gamescreen.model.GameModel;
 import net.nikonorov.filler.gamescreen.model.GameModelImpl;
 import net.nikonorov.filler.gamescreen.view.GameView;
 import net.nikonorov.filler.utils.Constants;
+
+import java.util.ArrayList;
 
 /**
  * Created by vitaly on 20.08.16.
@@ -24,8 +27,7 @@ public class GamePresenterImpl implements GamePresenter {
     public GamePresenterImpl(GameView view, GameMode mode) {
         this.view = view;
         this.model = new GameModelImpl(this, mode);
-
-        view.showGameField(model.getGameField());
+//        view.showGameField(model.getGameField());
     }
 
     @Override
@@ -58,8 +60,8 @@ public class GamePresenterImpl implements GamePresenter {
     }
 
     @Override
-    public void fieldChanged(ColorItem[][] gameField) {
-        view.showGameField(gameField);
+    public void fieldChanged(ColorItem[][] gameField, ArrayList<CellCoordinate> cells, int player) {
+        view.showGameField(gameField, cells, player);
     }
 
     @Override
@@ -87,7 +89,7 @@ public class GamePresenterImpl implements GamePresenter {
     @Override
     public void onRestartClick() {
         model.createGame();
-        view.showGameField(model.getGameField());
+        view.showGameField(model.getGameField(), null, 0);
         disableBtns();
         refreshGameInfo();
     }

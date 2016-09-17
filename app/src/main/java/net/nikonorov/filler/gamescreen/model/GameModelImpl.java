@@ -61,11 +61,11 @@ public class GameModelImpl implements GameModel {
 
         players[player].makeMove(colorItem, gameField);
 
-        for (Player.CellCoordinate coordinate : players[player].getCells()){
+        for (CellCoordinate coordinate : players[player].getCells()){
             gameField[coordinate.getCoordinates()[0]][coordinate.getCoordinates()[1]] = colorItem;
         }
 
-        presenter.fieldChanged(gameField);
+        presenter.fieldChanged(gameField, players[player].getCells(), player);
         presenter.scoreChanged(players[0].getScore(), players[1].getScore(), players[0].getColor(), players[1].getColor());
 
         lockedColors[player] = players[player].getColor();
