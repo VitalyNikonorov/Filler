@@ -34,6 +34,30 @@
         android:layout_toLeftOf="@+id/player_2_img"/>
 
     <ImageButton
+        android:id="@+id/game_player_1_mark"
+        android:layout_toRightOf="@+id/score_player_1"
+        android:layout_marginTop="8dp"
+        android:elevation="6dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/ic_circle_16dp"
+        android:layout_width="44dp"
+        android:layout_height="45dp"
+        />
+
+    <ImageButton
+        android:id="@+id/game_player_2_mark"
+        android:layout_toLeftOf="@+id/score_player_2"
+        android:layout_marginTop="8dp"
+        android:elevation="6dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/ic_cross_16dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        />
+
+    <ImageButton
         android:layout_marginTop="8dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"

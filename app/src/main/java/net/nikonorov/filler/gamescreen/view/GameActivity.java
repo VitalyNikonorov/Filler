@@ -34,6 +34,8 @@ public class GameActivity extends Activity implements GameView {
     private ImageButton player2Img;
     private Dialog dialog;
     private TextView victoryMsgTV;
+    private ImageButton player1Mark;
+    private ImageButton player2Mark;
 
     private ImageButton[] gameButtons = new ImageButton[5];
 
@@ -52,6 +54,9 @@ public class GameActivity extends Activity implements GameView {
         }
 
         gameCells = new GameCell[Constants.FIELD_HEIGHT][Constants.FIELD_WIDTH];
+
+        player1Mark = (ImageButton) findViewById(R.id.game_player_1_mark);
+        player2Mark = (ImageButton) findViewById(R.id.game_player_2_mark);
 
         gameFieldView = (LinearLayout) findViewById(R.id.game_field_view);
         generateGameFieldView();
@@ -183,9 +188,11 @@ public class GameActivity extends Activity implements GameView {
     }
 
     @Override
-    public void updateScore(int score1, int score2) {
+    public void updateScore(int score1, int score2, ColorItem player1Color, ColorItem player2Color) {
         scorePlayerOneTV.setText(String.valueOf(score1));
         scorePlayerTwoTV.setText(String.valueOf(score2));
+        player1Mark.setBackgroundColor(ContextCompat.getColor(this, Constants.GAME_COLORS[player1Color.getIndex()]));
+        player2Mark.setBackgroundColor(ContextCompat.getColor(this, Constants.GAME_COLORS[player2Color.getIndex()]));
     }
 
     @Override

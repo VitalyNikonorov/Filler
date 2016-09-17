@@ -63,8 +63,8 @@ public class GamePresenterImpl implements GamePresenter {
     }
 
     @Override
-    public void scoreChanged(int score1, int score2) {
-        view.updateScore(score1, score2);
+    public void scoreChanged(int score1, int score2, ColorItem player1Color, ColorItem player2Color) {
+        view.updateScore(score1, score2, player1Color, player2Color);
         if ( (score1 + score2) == (Constants.FIELD_HEIGHT * Constants.FIELD_WIDTH) ){
             String msg1 = "<font color=#000000>" + ((Activity)view).getString(R.string.victory_text_1) + " </font>";
             String msg2 = "<font color=#000000> " + ((Activity)view).getString(R.string.victory_text_2) + "</font>";
