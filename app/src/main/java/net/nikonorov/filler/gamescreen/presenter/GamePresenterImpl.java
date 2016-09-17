@@ -89,5 +89,12 @@ public class GamePresenterImpl implements GamePresenter {
         model.createGame();
         view.showGameField(model.getGameField());
         disableBtns();
+        refreshGameInfo();
+    }
+
+    @Override
+    public void refreshGameInfo() {
+        disableBtns();
+        model.refreshScore();
     }
 }

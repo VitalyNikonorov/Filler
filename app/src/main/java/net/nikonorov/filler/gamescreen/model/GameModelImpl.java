@@ -42,6 +42,12 @@ public class GameModelImpl implements GameModel {
     }
 
     @Override
+    public void refreshScore() {
+        makeMove(0, players[0].getColor());
+        makeMove(1, players[1].getColor());
+    }
+
+    @Override
     public ColorItem[][] getGameField() {
         return gameField;
     }

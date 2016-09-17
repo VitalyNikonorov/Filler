@@ -12,4 +12,5 @@ public interface GamePresenter {
     void scoreChanged(int score1, int score2);
     void disableBtns();
     void onRestartClick();
+    void refreshGameInfo();
 }

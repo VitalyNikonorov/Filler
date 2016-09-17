@@ -12,4 +12,5 @@ public interface GameModel {
     void onMoved(int player);
     ColorItem[] getLockedColors();
     void createGame();
+    void refreshScore();
 }

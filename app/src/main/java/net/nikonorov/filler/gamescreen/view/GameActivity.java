@@ -100,8 +100,7 @@ public class GameActivity extends Activity implements GameView {
         scorePlayerOneTV = (TextView) findViewById(R.id.score_player_1);
         scorePlayerTwoTV = (TextView) findViewById(R.id.score_player_2);
 
-        presenter.disableBtns();
-
+        presenter.refreshGameInfo();
 
         dialog = new Dialog(GameActivity.this);
         dialog.setContentView(R.layout.popup_victory);
@@ -162,15 +161,15 @@ public class GameActivity extends Activity implements GameView {
         }
     }
 
-    public void scaleView(View v, float startScale, float endScale) {
-        Animation anim = new ScaleAnimation(
-                startScale, endScale, // Start and end values for the X axis scaling
-                startScale, endScale, // Start and end values for the Y axis scaling
-                Animation.RELATIVE_TO_SELF, 0f, // Pivot point of X scaling
-                Animation.RELATIVE_TO_SELF, 1f); // Pivot point of Y scaling
-        anim.setFillAfter(true); // Needed to keep the result of the animation
-        v.startAnimation(anim);
-    }
+//    public void scaleView(View v, float startScale, float endScale) {
+//        Animation anim = new ScaleAnimation(
+//                startScale, endScale, // Start and end values for the X axis scaling
+//                startScale, endScale, // Start and end values for the Y axis scaling
+//                Animation.RELATIVE_TO_SELF, 0f, // Pivot point of X scaling
+//                Animation.RELATIVE_TO_SELF, 1f); // Pivot point of Y scaling
+//        anim.setFillAfter(true); // Needed to keep the result of the animation
+//        v.startAnimation(anim);
+//    }
 
     @Override
     public void showGameField(ColorItem[][] field) {
@@ -178,7 +177,7 @@ public class GameActivity extends Activity implements GameView {
         for(int j = 0; j < Constants.FIELD_HEIGHT; j++){
             for(int i = 0; i < Constants.FIELD_WIDTH; i++){
                 gameCells[j][i].setBackgroundColor(ContextCompat.getColor(this, Constants.GAME_COLORS[field[j][i].getIndex()]));
-                scaleView(gameCells[j][i], 1.5f, 1.0f);
+//                scaleView(gameCells[j][i], 1.5f, 1.0f);
             }
         }
     }
