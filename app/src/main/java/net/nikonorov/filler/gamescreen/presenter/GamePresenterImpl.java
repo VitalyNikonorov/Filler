@@ -73,7 +73,7 @@ public class GamePresenterImpl implements GamePresenter {
             if (score1 > score2) {
                 msg3 = "<font color=#F44336>" + ((Activity)view).getString(R.string.victory_text_red) + "</font>";
             } else {
-                msg3 = "<font color=#2196F3>" + ((Activity)view).getString(R.string.victory_text_red) + "</font>";
+                msg3 = "<font color=#2196F3>" + ((Activity)view).getString(R.string.victory_text_blue) + "</font>";
             }
             view.showGameOverDialog(msg1 + msg3 + msg2);
         }

@@ -1,16 +1,16 @@
 <resources>
     <string name="app_name">Filler</string>
-    <string name="author_info">Виталий Никоноров</string>
+    <string name="author_info">Vitaly Nikonorov</string>
     <string name="author_email">email@nikonorov.net</string>
-    <string name="single_mode_title">Одиночная игра</string>
-    <string name="single_mode">Один игрок</string>
-    <string name="two_players_mode">Два игрока</string>
-    <string name="about_author_label">Об авторе</string>
-    <string name="victory">ПОБЕДА!!!</string>
-    <string name="restart_game">РЕСТАРТ</string>
-    <string name="back_to_menu">ВЫЙТИ</string>
-    <string name="victory_text_1">Выиграл игрок в</string>
-    <string name="victory_text_2">углу</string>
-    <string name="victory_text_red">красном</string>
-    <string name="victory_text_blue">красном</string>
+    <string name="single_mode_title">Single player</string>
+    <string name="single_mode">Single player</string>
+    <string name="two_players_mode">Two players</string>
+    <string name="about_author_label">About author</string>
+    <string name="victory">VICTORY!!!</string>
+    <string name="restart_game">RESTART</string>
+    <string name="back_to_menu">BACK</string>
+    <string name="victory_text_1">Player in the</string>
+    <string name="victory_text_2">corner won</string>
+    <string name="victory_text_red">red</string>
+    <string name="victory_text_blue">blue</string>
 </resources>
