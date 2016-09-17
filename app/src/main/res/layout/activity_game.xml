@@ -4,13 +4,13 @@
 
     <ImageButton
         android:layout_marginTop="8dp"
-
+        android:elevation="6dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:id="@+id/player_1_img"
         android:background="@drawable/main_btn_background_pink"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:src="@drawable/ic_person_white_36dp"/>
 
     <TextView
@@ -37,14 +37,16 @@
         android:layout_marginTop="8dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
+        android:elevation="6dp"
         android:id="@+id/player_2_img"
         android:layout_alignParentRight="true"
         android:background="@drawable/main_btn_background_blue"
-        android:layout_width="40dp"
-        android:layout_height="40dp" />
+        android:layout_width="45dp"
+        android:layout_height="45dp" />
 
     <LinearLayout
         android:id="@+id/game_field_view"
+        android:elevation="6dp"
         android:layout_below="@+id/player_1_img"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -56,46 +58,51 @@
     </LinearLayout>
 
 
-        <ImageButton
+        <net.nikonorov.filler.utils.GameColorButton
             android:id="@+id/game_red_btn"
             android:layout_margin="4dp"
             android:layout_below="@+id/game_field_view"
             android:background="@drawable/main_btn_background_red"
             android:layout_toLeftOf="@+id/game_yellow_btn"
+            android:elevation="6dp"
             android:layout_width="60dp"
             android:layout_height="60dp" />
 
-        <ImageButton
+        <net.nikonorov.filler.utils.GameColorButton
             android:id="@+id/game_yellow_btn"
             android:background="@drawable/main_btn_background_yellow"
             android:layout_margin="4dp"
+            android:elevation="6dp"
             android:layout_below="@+id/game_field_view"
             android:layout_toLeftOf="@+id/game_green_btn"
             android:layout_width="60dp"
             android:layout_height="60dp" />
 
-        <ImageButton
+        <net.nikonorov.filler.utils.GameColorButton
             android:id="@+id/game_green_btn"
             android:background="@drawable/main_btn_background_green"
             android:layout_margin="4dp"
+            android:elevation="6dp"
             android:layout_below="@+id/game_field_view"
             android:layout_centerHorizontal="true"
             android:layout_width="60dp"
             android:layout_height="60dp" />
 
-        <ImageButton
+        <net.nikonorov.filler.utils.GameColorButton
             android:id="@+id/game_blue_btn"
             android:background="@drawable/main_btn_background_blue"
             android:layout_margin="4dp"
+            android:elevation="6dp"
             android:layout_below="@+id/game_field_view"
             android:layout_toRightOf="@+id/game_green_btn"
             android:layout_width="60dp"
             android:layout_height="60dp" />
 
-        <ImageButton
+        <net.nikonorov.filler.utils.GameColorButton
             android:id="@+id/game_pink_btn"
             android:background="@drawable/main_btn_background_pink"
             android:layout_margin="4dp"
+            android:elevation="6dp"
             android:layout_below="@+id/game_field_view"
             android:layout_toRightOf="@+id/game_blue_btn"
             android:layout_width="60dp"

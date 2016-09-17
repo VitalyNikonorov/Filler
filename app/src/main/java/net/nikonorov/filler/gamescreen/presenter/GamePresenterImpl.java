@@ -25,15 +25,31 @@ public class GamePresenterImpl implements GamePresenter {
 
     @Override
     public void makeMove(ColorItem colorItem) {
-        model.makeMove(activePlayer, colorItem);
 
-        if (activePlayer == 0 ){
-            activePlayer = 1;
-        } else {
-            activePlayer = 0;
+        if (!isLocked(colorItem)) {
+
+            model.makeMove(activePlayer, colorItem);
+
+            if (activePlayer == 0) {
+                activePlayer = 1;
+            } else {
+                activePlayer = 0;
+            }
+
+            model.onMoved(activePlayer);
         }
+    }
 
-        model.onMoved(activePlayer);
+    boolean isLocked(ColorItem colorItem){
+        boolean result = false;
+
+        for  (int i = 0; i < model.getLockedColors().length; i++){
+            if (model.getLockedColors()[i] == colorItem){
+                result = true;
+            }
+        }
+        return result;
+
     }
 
     @Override
