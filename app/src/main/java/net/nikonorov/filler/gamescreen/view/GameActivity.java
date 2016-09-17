@@ -102,7 +102,7 @@ public class GameActivity extends Activity implements GameView {
     @Override
     protected void onResume() {
         super.onResume();
-        overridePendingTransition(R.animator.open_translate, R.animator.close_scale);
+//        overridePendingTransition(R.animator.open_translate, R.animator.close_scale);
     }
 
     @Override

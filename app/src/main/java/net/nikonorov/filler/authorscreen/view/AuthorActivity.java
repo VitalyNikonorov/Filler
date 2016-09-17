@@ -21,10 +21,11 @@ public class AuthorActivity extends Activity implements AuthorView {
         presenter = new AuthorPresenterImpl(this);
 
     }
+
     @Override
     protected void onResume() {
         super.onResume();
-        overridePendingTransition(R.animator.open_translate, R.animator.close_scale);
+//        overridePendingTransition(R.animator.open_translate, R.animator.close_scale);
     }
 
     @Override
