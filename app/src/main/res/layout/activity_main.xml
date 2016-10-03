@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@color/colorPrimary"
+    android:layout_gravity="center"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <LinearLayout
@@ -34,7 +35,6 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="36dp"
         android:orientation="vertical"
-        android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
@@ -67,6 +67,34 @@
 
         <ImageButton
             android:id="@+id/about_author_btn"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:elevation="6dp"
+            android:background="@drawable/main_btn_background_green"
+            android:src="@drawable/ic_contact_mail_white_48dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/game_green"
+            android:text="@string/about_author_label"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sign_up"
+        android:layout_marginTop="36dp"
+        android:layout_below="@+id/about_author"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/sign_up_btn"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:elevation="6dp"

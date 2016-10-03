@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import net.nikonorov.filler.R;
+import net.nikonorov.filler.SignUpActivity;
 import net.nikonorov.filler.authorscreen.view.AuthorActivity;
 import net.nikonorov.filler.gamescreen.GameMode;
 import net.nikonorov.filler.gamescreen.view.GameActivity;
@@ -48,6 +49,13 @@ public class MainActivity extends Activity implements MainView {
             @Override
             public void onClick(View v) {
                 presenter.onMenuItemClick(MenuItems.ABOUT_AUTHOR);
+            }
+        });
+
+        findViewById(R.id.sign_up_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SignUpActivity.class));
             }
         });
     }
