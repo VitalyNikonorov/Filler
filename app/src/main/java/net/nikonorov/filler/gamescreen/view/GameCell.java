@@ -2,6 +2,7 @@ package net.nikonorov.filler.gamescreen.view;
 
 import android.content.Context;
 import android.os.Build;
+import android.support.v7.widget.AppCompatImageButton;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageButton;
@@ -11,7 +12,7 @@ import net.nikonorov.filler.utils.PixelConverter;
 /**
  * Created by vitaly on 21.08.16.
  */
-public class GameCell extends ImageButton {
+public class GameCell extends AppCompatImageButton {
 
     public GameCell(Context context) {
         super(context);

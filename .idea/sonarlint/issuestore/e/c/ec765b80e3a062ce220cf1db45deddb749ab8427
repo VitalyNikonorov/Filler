@@ -1,0 +1,10 @@
+
+[squid:S1192"FDefine a constant instead of duplicating this literal "%d_%d" 7 times.(£á™Ë
+Isquid:S1066"/Merge this if statement with the enclosing one.(›‰žêùÿÿÿÿ
+Dsquid:S1066"/Merge this if statement with the enclosing one.(è×Žå
+Dsquid:S1066"/Merge this if statement with the enclosing one.(ÂÚû¹
+Dsquid:S1066"/Merge this if statement with the enclosing one.(ÆÌøª
+m
+squid:S135"YReduce the total number of break and continue statements in this loop to use at most one.(“–ð£
+„squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ŽÔ–`
+gsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 37 to the 15 allowed.(±¾èÇ

@@ -1,0 +1,6 @@
+
+bsquid:S1192"HDefine a constant instead of duplicating this literal "</font>" 3 times.(§Š˜¢üÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(´ÂÕ‹ûÿÿÿÿ
+Šsquid:S1319"pThe type of the "cells" object should be an interface such as "List" rather than the implementation "ArrayList".(Ë±óùøÿÿÿÿ
+Lsquid:S1135"2Complete the task associated to this TODO comment.(Î¹Œáýÿÿÿÿ
+Usquid:UselessImportCheck".Remove this unused import 'android.text.Html'.(ø¿ˆÛùÿÿÿÿ

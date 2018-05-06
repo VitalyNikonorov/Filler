@@ -1,0 +1,7 @@
+
+zsquid:S1450"YRemove the "player2Img" field and declare it as a local variable in the relevant methods.(Õ–ÀÉüÿÿÿÿ8úø©³,
+lsquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(©Øûºûÿÿÿÿ8úø©³,
+psquid:UselessImportCheck"BRemove this unused import 'android.view.animation.ScaleAnimation'.(—ş“ùüÿÿÿÿ8úø©³,
+Ysquid:UselessImportCheck"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8úø©³,
+`squid:UselessImportCheck"2Remove this unused import 'android.widget.Button'.(²òıÿÿÿÿ8úø©³,
+fsquid:UselessImportCheck"=Remove this unused import 'android.view.animation.Animation'.(õò©²8úø©³,
