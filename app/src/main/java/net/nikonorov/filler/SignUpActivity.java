@@ -4,15 +4,11 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import net.nikonorov.filler.api.ApiInterface;
 import net.nikonorov.filler.api.SignUpRequest;
 import net.nikonorov.filler.api.SignUpResponse;
-
-import java.util.List;
 
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
@@ -41,9 +37,9 @@ public class SignUpActivity extends Activity {
 
         setContentView(R.layout.sign_up_layout);
 
-        final EditText emailET = (EditText) findViewById(R.id.email);
-        final EditText nameET = (EditText) findViewById(R.id.name);
-        final EditText passET = (EditText) findViewById(R.id.pass);
+        final EditText emailET = findViewById(R.id.email);
+        final EditText nameET = findViewById(R.id.name);
+        final EditText passET = findViewById(R.id.pass);
 
         retrofit = new Retrofit.Builder()
                 .baseUrl(API_BASE_URL)
@@ -89,6 +85,7 @@ public class SignUpActivity extends Activity {
 
     @Override
     public void onStop() {
+        super.onStop();
         if (!subscription.isUnsubscribed()) {
             subscription.unsubscribe();
         }

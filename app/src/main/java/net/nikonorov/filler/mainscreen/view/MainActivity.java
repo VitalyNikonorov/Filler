@@ -63,7 +63,6 @@ public class MainActivity extends Activity implements MainView {
     @Override
     protected void onResume() {
         super.onResume();
-//        overridePendingTransition(R.animator.open_translate, R.animator.close_scale);
     }
 
     @Override
